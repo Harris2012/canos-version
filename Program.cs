@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,8 @@ namespace CanosVersion
     {
         static void Main(string[] args)
         {
-            var folder = @"D:\TheGitlabWorkspace\savory-canos";
+
+            var folder = ConfigurationManager.AppSettings["RootFolder"] ?? @"D:\TheGitlabWorkspace\savory-canos";
 
             var directory = new DirectoryInfo(folder);
 
